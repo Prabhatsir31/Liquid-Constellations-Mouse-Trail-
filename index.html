@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
+        <canvas id="canvas1"></canvas>
+        
+        <canvas id="canvas2"></canvas>
+        
+        <article>
+          To create this effect I use two overlapping canvas elements. Particles on the front layer are being blurred using SVG filter for liquid appearance. The layer behing hides the particles themselves but connects their current position with fading lines.<br>
+        </article>
+        <h1>Move the mouse across canvas</h1>
+        <script src="svgLogic.js"></script>
+        <footer>Created by <a href="" target='blank'>Prabhu Laboratory</a> @2020.
+        </footer>        
+    </body>
+</html>
+
